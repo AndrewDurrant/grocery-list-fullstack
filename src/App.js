@@ -1,14 +1,53 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
+import cuid from 'cuid';
 
 import GroceryContext from './GroceryContext';
-import Sidebar from './Sidebar/Sidebar';
-import Main from './Main/Main';
+import Sidebar from './components/Sidebar/Sidebar';
+import Main from './components/Main/Main.js';
+import AddItem from './components/AddItem/AddItem';
 export class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      categories: ['beverages', 'bakery', 'bulk', 'canned goods', 'dairy', 'frozen foods', 'produce', 'meat', 'health', 'miscellaneous'],
+      categories: [
+        {
+          id: cuid(),
+          name: 'all'
+        },
+        {
+          id: cuid(),
+          name: 'bakery'
+        }, 
+        {
+          id: cuid(),
+          name: 'bulk'
+        },
+        {
+          id: cuid(),
+          name: 'canned goods'
+        },
+        {
+          id: cuid(),
+          name: 'dairy'
+        },
+        {
+          id: cuid(),
+          name: 'frozen foods'
+        },
+        {
+          id: cuid(),
+          name: 'meat'
+        },
+        {
+          id: cuid(),
+          name: 'miscellaneous'
+        },
+        {
+          id: cuid(),
+          name: 'produce'
+        }
+      ],
       items: [],
       error: null
     }
@@ -92,12 +131,31 @@ export class App extends Component {
             <Route
               exact
               path="/"
-              render={props =>
+              render={props => (
                 <>
                   <Sidebar {...props}/>
                   <Main {...props}/>
                 </>
-              }
+              )}
+            />
+
+            <Route
+              exact
+              path="/category/:categoryId"
+              render={props => (
+                <>
+                  <Sidebar {...props}/>
+                  <Main {...props}/>
+                </>
+              )}
+            />
+
+            <Route
+              exact
+              path="/addItem"
+              render={props => (
+                <AddItem {...props}/>
+              )}
             />
 
             <Route />
