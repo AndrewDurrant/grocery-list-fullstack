@@ -138,7 +138,6 @@ export class App extends Component {
                 </>
               )}
             />
-
             <Route
               exact
               path="/category/:categoryId"
@@ -149,7 +148,6 @@ export class App extends Component {
                 </>
               )}
             />
-
             <Route
               exact
               path="/addItem"
@@ -157,8 +155,6 @@ export class App extends Component {
                 <AddItem {...props}/>
               )}
             />
-
-            <Route />
           </main>
         </>
       </GroceryContext.Provider>
