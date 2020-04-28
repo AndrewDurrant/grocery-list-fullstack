@@ -1,9 +1,10 @@
 import React from 'react';
+import ItemList from '../ItemList/ItemList';
 
 function Main(props) {
   return (
     <div>
-      <h3>This is my Main Content</h3>
+      <ItemList {...props} />
     </div>
   );
 }

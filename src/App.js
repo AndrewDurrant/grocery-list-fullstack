@@ -105,6 +105,12 @@ export class App extends Component {
 
   }
 
+  updateItems = (item) => {
+    this.setState({
+      items: [...this.state.items, item]
+    })
+  }
+
   render() {
     const contextValue = {
       categories: this.state.categories,
@@ -112,6 +118,7 @@ export class App extends Component {
       error: this.state.error,
       addItem: this.handleAddItem,
       deleteNote: this.handleDelete,
+      updateItems: this.updateItems
     }
 
     return (
