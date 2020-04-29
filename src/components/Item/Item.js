@@ -7,7 +7,7 @@ export class Item extends Component {
 
   render() {
     let context = this.context;
-    const { history, name, id } = this.props;
+    const { name, id } = this.props;
 
     return (
       <div className="itemCard">

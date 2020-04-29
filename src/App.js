@@ -54,7 +54,7 @@ export class App extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:8000/items')
+    fetch('http://localhost:8000/item')
       .then(response => response.json())
       .then(data => {
         this.setState({
@@ -117,7 +117,7 @@ export class App extends Component {
       items: this.state.items,
       error: this.state.error,
       addItem: this.handleAddItem,
-      deleteNote: this.handleDelete,
+      deleteItem: this.handleDelete,
       updateItems: this.updateItems
     }
 
